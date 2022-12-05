@@ -118,7 +118,7 @@ while True:
         pyautogui.press('esc')
         time.sleep(randint(0, 1))
         pyautogui.press('0')
-        time.sleep(randint(40, 41))
+        time.sleep(randint(20, 21))
         pyautogui.press('0')
         time.sleep(randint(0, 1))
 
