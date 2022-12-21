@@ -40,11 +40,12 @@ main_png = 'main.png'
 chat_png = 'chat.png'
 loot_png = 'loot.png'
 empty_enemy_heals_bar_fragment = './fragments/empty_heals_bar_fragment.png'
-heal_bar_png = 'heal.png'
-heal_bar_fragment = './fragments/heal_fragment.png'
+hp_mp_bar_png = 'hp_mp_bar.png'
+hp_mp_bar_fragment = './fragments/hp_mp_bar_fragment.png'
 distance_to_loot_1 = 'distance_to_loot_1.png'
 distance_to_loot_2 = 'distance_to_loot_2.png'
 error_chat_fragment = './fragments/error_chat_fragment.png'
+error2_chat_fragment = './fragments/error2_chat_fragment.png'
 
 iteration = 1
 while True:
@@ -54,7 +55,7 @@ while True:
 
     save_main_picture('main.png', top=32, left=596, wight=145, height=14)
 
-    print(f'Search {datetime.datetime.today().strftime("%H:%M:%S")}')
+    #print(f'Search {datetime.datetime.today().strftime("%H:%M:%S")}')
     if not find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98):
         if not find_coordinates_template_img_in_main_img(main_png, './fragments/full_enemy_heal_bar.png', 0.85):
 
@@ -67,20 +68,32 @@ while True:
             print(f'Fight _{iteration}_ {datetime.datetime.today().strftime("%H:%M:%S")}')
             if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) is not None:
                 break
-            pyautogui.press('7')
-            time.sleep(1)
-            if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) is not None:
-                break
             pyautogui.press('8')
             time.sleep(1)
             if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) is not None:
                 break
+            pyautogui.press('4')
+            time.sleep(0.5)
+            if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) is not None:
+                break
+            pyautogui.press('-')
+            time.sleep(1.5)
+            if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
+                                                         0.98) is not None:
+                break
             pyautogui.press('9')
+            time.sleep(2)
             while find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) is None:
+                # if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
+                #                                              0.98) is not None:
+                #     break
+                # pyautogui.press('6')
+                # time.sleep(1)
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
                 pyautogui.press('5')
+                time.sleep(0.6)
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
@@ -88,7 +101,32 @@ while True:
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
+                time.sleep(0.5)
+                pyautogui.press('3')
+                if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
+                                                             0.98) is not None:
+                    break
+                pyautogui.press('1')
+                if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
+                                                             0.98) is not None:
+                    break
+                time.sleep(0.5)
+                pyautogui.press('3')
+                if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
+                                                             0.98) is not None:
+                    break
+                pyautogui.press('7')
+                time.sleep(1)
+                if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
+                                                             0.98) is not None:
+                    break
+                pyautogui.press('5')
+                time.sleep(1)
+                if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
+                                                             0.98) is not None:
+                    break
                 pyautogui.press('2')
+                time.sleep(1)
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
@@ -96,11 +134,11 @@ while True:
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
-                pyautogui.press('2')
+                pyautogui.press('1')
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
-                pyautogui.press('4')
+                pyautogui.press('1')
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
@@ -108,15 +146,15 @@ while True:
                 if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
                                                              0.98) is not None:
                     break
-                pyautogui.press('3')
-                if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment,
-                                                             0.98) is not None:
-                    break
-                pyautogui.press('6')
+                pyautogui.press('7')
+                time.sleep(1)
                 save_main_picture(chat_png, top=539, left=19, wight=170, height=125)
                 if find_coordinates_template_img_in_main_img(chat_png, error_chat_fragment,
                                                              0.9) is not None:
                     pyautogui.press('0')
+                if find_coordinates_template_img_in_main_img(chat_png, error2_chat_fragment,
+                                                             0.9) is not None:
+                    break
                 save_main_picture(main_png, top=32, left=596, wight=145, height=14)
 
 
@@ -151,12 +189,14 @@ while True:
             pyautogui.keyUp('c')
         print(f'Healing {datetime.datetime.today().strftime("%H:%M:%S")}')
         # pyautogui.press('esc')
-        save_main_picture(heal_bar_png, top=711, left=297, wight=141, height=10)
-        if find_coordinates_template_img_in_main_img(heal_bar_png, heal_bar_fragment, 0.64) is None:
+
+        save_main_picture(hp_mp_bar_png, top=711, left=297, wight=141, height=24)
+
+        if find_coordinates_template_img_in_main_img(hp_mp_bar_png, hp_mp_bar_fragment, 0.73) is None:
             time.sleep(0.5)
             pyautogui.press('0')
-            while find_coordinates_template_img_in_main_img(heal_bar_png, heal_bar_fragment, 0.64) is None:
-                save_main_picture(heal_bar_png, top=711, left=297, wight=141, height=10)
+            while find_coordinates_template_img_in_main_img(hp_mp_bar_png, hp_mp_bar_fragment, 0.73) is None:
+                save_main_picture(hp_mp_bar_png, top=711, left=297, wight=141, height=24)
             else:
                 time.sleep(0.5)
                 pyautogui.press('0')
