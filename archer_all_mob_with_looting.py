@@ -40,21 +40,29 @@ main_png = 'main.png'
 chat_png = 'chat.png'
 loot_png = 'loot.png'
 empty_enemy_heals_bar_fragment = './fragments/empty_heals_bar_fragment.png'
-heal_bar_png = 'heal.png'
-heal_bar_fragment = './fragments/heal_fragment.png'
+full_enemy_heals_bar_fragment = './fragments/full_enemy_heal_bar.png'
+# hp_mp_bar_png = 'hp_mp_bar.png'
+mana_bar_png = 'mana_bar.png'
+heal_bar_png = 'heal_bar.png'
+# hp_mp_bar_fragment = './fragments/hp_mp_bar_fragment.png'
+heal_bar_fragment = './fragments/heal_bar_fragment.png'
+mana_bar_fragment = './fragments/mana_bar_fragment.png'
+determine_enemy_fragment = './fragments/determine_enemy_fragment.png'
+determine_enemy = 'determine_enemy.png'
 distance_to_loot_1 = 'distance_to_loot_1.png'
 distance_to_loot_2 = 'distance_to_loot_2.png'
 error_chat_fragment = './fragments/error_chat_fragment.png'
+error2_chat_fragment = './fragments/error2_chat_fragment.png'
+error3_chat_fragment = './fragments/error3_chat_fragment.png'
 
-iteration = 1
+iteration_number1 = 1
 while True:
-    # must be at least 2 seconds before last catch
-    if time.time() - last_time < 3:
+    if time.time() - last_time < 1:
         continue
 
     save_main_picture('main.png', top=32, left=596, wight=145, height=14)
 
-    print(f'Search {datetime.datetime.today().strftime("%H:%M:%S")}')
+    # print(f'Search {datetime.datetime.today().strftime("%H:%M:%S")}')
     if not find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98):
         if not find_coordinates_template_img_in_main_img(main_png, './fragments/full_enemy_heal_bar.png', 0.85):
 
@@ -64,7 +72,9 @@ while True:
             pyautogui.press('TAB')
 
         else:
-            print(f'Fight _{iteration}_ {datetime.datetime.today().strftime("%H:%M:%S")}')
+            print(f'Fight _{iteration_number1}_ {datetime.datetime.today().strftime("%H:%M:%S")}')
+            iteration_number1 += 1
+            iteration_number2 = 1
             if find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) is not None:
                 break
             pyautogui.press('7')
@@ -117,7 +127,25 @@ while True:
                 if find_coordinates_template_img_in_main_img(chat_png, error_chat_fragment,
                                                              0.9) is not None:
                     pyautogui.press('0')
+
+                if iteration_number2 % 6 == 0:
+                    save_main_picture(main_png, top=32, left=596, wight=145, height=14)
+                    save_main_picture(chat_png, top=539, left=19, wight=170, height=125)
+                    if find_coordinates_template_img_in_main_img(chat_png, error_chat_fragment,
+                                                                 0.85):
+                        pyautogui.press('0')
+
+                    if find_coordinates_template_img_in_main_img(chat_png, error2_chat_fragment,
+                                                                 0.85):
+                        break
+
+                    if find_coordinates_template_img_in_main_img(chat_png, error3_chat_fragment, 0.85) or \
+                            find_coordinates_template_img_in_main_img(main_png, full_enemy_heals_bar_fragment, 0.97):
+                        time.sleep(1)
+                        pyautogui.press('esc')
+                        break
                 save_main_picture(main_png, top=32, left=596, wight=145, height=14)
+                iteration_number2 += 1
 
 
     else:
@@ -149,16 +177,21 @@ while True:
             time.sleep(0.5)
             pyautogui.keyUp('shift')
             pyautogui.keyUp('c')
-        print(f'Healing {datetime.datetime.today().strftime("%H:%M:%S")}')
         # pyautogui.press('esc')
-        save_main_picture(heal_bar_png, top=711, left=297, wight=141, height=10)
-        if find_coordinates_template_img_in_main_img(heal_bar_png, heal_bar_fragment, 0.64) is None:
-            time.sleep(0.5)
-            pyautogui.press('0')
-            while find_coordinates_template_img_in_main_img(heal_bar_png, heal_bar_fragment, 0.64) is None:
-                save_main_picture(heal_bar_png, top=711, left=297, wight=141, height=10)
-            else:
-                time.sleep(0.5)
+        if iteration_number1 % 1 == 0:
+            print(f'Healing {datetime.datetime.today().strftime("%H:%M:%S")}')
+            save_main_picture(heal_bar_png, top=711, left=297, wight=141, height=10)
+            save_main_picture(mana_bar_png, top=725, left=297, wight=141, height=10)
+
+            if find_coordinates_template_img_in_main_img(heal_bar_png, heal_bar_fragment, 0.64) is None or \
+                    find_coordinates_template_img_in_main_img(mana_bar_png, mana_bar_fragment, 0.56) is None:
                 pyautogui.press('0')
-        iteration += 1
-        last_time = time.time()
+
+                while find_coordinates_template_img_in_main_img(heal_bar_png, heal_bar_fragment, 0.64) is None or \
+                        find_coordinates_template_img_in_main_img(mana_bar_png, mana_bar_fragment, 0.56) is None:
+                    save_main_picture(heal_bar_png, top=711, left=297, wight=141, height=10)
+                    save_main_picture(mana_bar_png, top=725, left=297, wight=141, height=10)
+                else:
+                    pyautogui.press('0')
+
+    last_time = time.time()
