@@ -25,20 +25,21 @@ while True:
         else:
             bot.save_main_picture(determine_enemy, top=27, left=570, wight=8, height=8)
             if bot.find_coordinates_template_img_in_main_img(determine_enemy, determine_enemy_fragment, 0.98):
+
                 if bot.find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98):
                     break
 
                 start_fight_time = datetime.datetime.today().strftime("%H:%M:%S")
                 start = time.perf_counter()
 
-                bot.baf_after_fight('7', '8', '9')
+                bot.baf_after_fight()
                 iteration_number3 = 1
                 while bot.find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) \
                         is None:
                     bot.save_main_picture(chat_png, top=539, left=19, wight=170, height=125)
                     bot.save_main_picture(main_png, top=32, left=596, wight=145, height=14)
 
-                    bot.fight_with_mob('5', '1', '2', '2', '2', '4', '3', '3', '6')
+                    bot.fight_with_mob('4', '4', '1', '2', '2', '2', '2', '3', '5', '9', '=', '7', '8', '6')
 
                     if iteration_number3 % 3 == 0:
                         bot.save_main_picture(chat_png, top=539, left=19, wight=170, height=125)
@@ -50,12 +51,12 @@ while True:
                         bot.save_main_picture(chat_png, top=539, left=19, wight=170, height=125)
 
                         if bot.find_coordinates_template_img_in_main_img(chat_png, error2_chat_fragment,
-                                                                         0.85):
+                                                                     0.85):
                             break
 
                         if bot.find_coordinates_template_img_in_main_img(chat_png, error3_chat_fragment, 0.85) or \
                                 bot.find_coordinates_template_img_in_main_img(main_png, full_enemy_heals_bar_fragment,
-                                                                              0.97):
+                                                                          0.97):
                             time.sleep(1)
                             pyautogui.press('esc')
                             break
@@ -67,9 +68,8 @@ while True:
                 iteration_number1 += 1
             else:
                 pyautogui.press('esc')
-
     else:
-        bot.looting_dead_mob()
-        # pyautogui.press('esc')
+        # bot.looting_dead_mob()
+        pyautogui.press('esc')
         bot.healing_heat_and_mana_point(1)
     last_time = time.time()

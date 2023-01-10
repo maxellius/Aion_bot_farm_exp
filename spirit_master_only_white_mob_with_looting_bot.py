@@ -31,14 +31,17 @@ while True:
                 start_fight_time = datetime.datetime.today().strftime("%H:%M:%S")
                 start = time.perf_counter()
 
-                bot.baf_after_fight('7', '8', '9')
+                # bot.baf_after_fight('8', '4', '-', '9')
                 iteration_number3 = 1
                 while bot.find_coordinates_template_img_in_main_img(main_png, empty_enemy_heals_bar_fragment, 0.98) \
                         is None:
                     bot.save_main_picture(chat_png, top=539, left=19, wight=170, height=125)
                     bot.save_main_picture(main_png, top=32, left=596, wight=145, height=14)
 
-                    bot.fight_with_mob('5', '1', '2', '2', '2', '4', '3', '3', '6')
+                    button_skills = ('5', '1', '3', '3', '2', '3', '5', '2', '2')
+                    skill_cast_time = (2.5, 0.7, 0.7, 0.7, 1.7, 1.7, 1.7, 1.7)
+
+                    bot.fight_magic_with_mob(button_skills, skill_cast_time)
 
                     if iteration_number3 % 3 == 0:
                         bot.save_main_picture(chat_png, top=539, left=19, wight=170, height=125)
@@ -67,7 +70,6 @@ while True:
                 iteration_number1 += 1
             else:
                 pyautogui.press('esc')
-
     else:
         bot.looting_dead_mob()
         # pyautogui.press('esc')
