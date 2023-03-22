@@ -1,7 +1,7 @@
 main_png = 'main.png'
 chat_png = 'chat.png'
 loot_png = 'loot.png'
-empty_enemy_heals_bar_fragment = './fragments/empty_heals_bar_fragment.png'
+empty_enemy_heals_bar_fragment = './fragments/empty_enemy_heals_bar_fragment.png'
 full_enemy_heals_bar_fragment = './fragments/full_enemy_heal_bar_fragment.png'
 full_bag_fragment = './fragments/full_bag_fragment.png'
 # hp_mp_bar_png = 'hp_mp_bar.png'

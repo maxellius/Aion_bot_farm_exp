@@ -1,12 +1,18 @@
 /venv/
-/good fight bot.py
-/Ethire.py
-/main.py
+/1366x768/good fight bot.py
+/1366x768/Ethire.py
+/1366x768/main.py
 /test go to object good.py
-/test2 bilding.py
+/test_vision_place.py
 /test3.py
 .idea/
 /output/
-/res2.png
-/res.png
+/1366x768/res2.png
+/1366x768/res.png
 /__pycache__/
+/craft/1920x1080.py
+/1366x768/res1.png
+/craft/result.png
+/craft/test.py
+/craft/test2.py
+/1366x768/result.png

@@ -1,8 +1,5 @@
 import time
-import cv2 as cv
-import mss.tools
 import pyautogui
-import numpy as np
 from functions import AionBot
 
 
@@ -15,7 +12,7 @@ while True:
         continue
 
     bot.save_main_picture('main.png', 114, 332, 9, 9)
-    if bot.find_coordinates_template_img_in_main_img('main.png', 'kolwo.png', 0.3):
+    if bot.find_coordinates_template_img_in_main_img('main.png', 'kolwo_fragment.png', 0.3):
         # craft
         pyautogui.moveTo(203, 117, 0.5, _pause=False)
         time.sleep(0.5)
