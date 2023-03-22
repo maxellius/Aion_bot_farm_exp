@@ -34,7 +34,7 @@ while True:
                     start_fight_time = datetime.datetime.today().strftime("%H:%M:%S")
                     start = time.perf_counter()
 
-                    bot.fight_with_error_checking(button_skills, skill_cast_time, button_baf_after_fight, baf_cast_time)
+                    bot.fight_with_error_checking(button_skills, skill_casting_time, button_baf_after_fight, baf_casting_time)
 
                     end = time.perf_counter()
                     print(f'Fight {iteration_number1} / {start_fight_time} / {round(end - start, 2)} sec')
@@ -48,7 +48,7 @@ while True:
                 start_fight_time = datetime.datetime.today().strftime("%H:%M:%S")
                 start = time.perf_counter()
 
-                bot.fight_with_error_checking(button_skills, skill_cast_time, button_baf_after_fight, baf_cast_time)
+                bot.fight_with_error_checking(button_skills, skill_casting_time, button_baf_after_fight, baf_casting_time)
 
                 end = time.perf_counter()
                 print(f'Fight {iteration_number1} / {start_fight_time} / {round(end - start, 2)} sec')

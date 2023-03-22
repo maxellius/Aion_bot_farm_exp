@@ -1,14 +1,17 @@
 only_fight_white_mobs = 'on'
+
 after_how_many_mod_need_healing = 1
 
-button_baf_after_fight = ('5', '1', '3')
-baf_cast_time = (2.5, 0.7, 0.7)
+button_baf_after_fight = ('5', '1', '3') #the name of the buttons on the skill bar in the game
+baf_casting_time = (2.5, 0.7, 0.7) #baf casting time (including animation) for skills without casting 0 or 0.1
 
-button_skills = ('5', '1', '3', '3', '2', '3', '5', '2', '2')
-skill_cast_time = (2.5, 0.7, 0.7, 0.7, 1.7, 1.7, 1.7, 1.7)
+button_skills = ('5', '1', '3', '3', '2', '3', '5', '2', '2') #the name of the buttons on the skill bar in the game
+skill_casting_time = (2.5, 0.7, 0.7, 0.7, 1.7, 1.7, 1.7, 1.7) #skill casting time (including animation) for skills without casting 0 or 0.1
 
-heal_sensitivity = 0.5
-delay_before_search_cycles = 0.1
+heal_sensitivity = 0.5 #if it doesn't heal enough, increase the value, if it doesn't get up after healing, decrease it.
+# range 0.1-1 (best 0.3-0.9)
+
+delay_before_search_cycles = 0.1 #if there are problems with choosing a mob, replace the value with 1 or 2
 
 #list of buttons you can use
 #['\t', '\n', '\r', ' ', '!', '"', '#', '$', '%', '&', "'", '(',
