@@ -1,0 +1,20 @@
+Download the bot for your screen resolution!
+
+Go to the settings file and configure the bot for your skill layout
+
+Enable game in full screen
+
+find and stand in the place where you want to kill mobs (white non-aggressive mobs)
+
+Run the AionBot file and deploy the game, the bot will take control
+
+
+
+Implemented features
+Auto search for mobs
+Possibility to select the filter white or red mobs (when the filter is enabled, aggressive mobs will be ignored)
+Custom combos and buffs (buff before the fight and during the fight)
+Collecting loot from dead mobs
+Event handling if the bag is full, with the time when the place in the bag ran out (to increase the efficiency of farming exp)
+Healing after the battle (with the ability to select the number of mobs before treatment)
+General work logs (number of killed mobs, time spent in battle with the mob, healing time, and real time)
